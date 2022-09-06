@@ -5,7 +5,7 @@ import yaml
 
 with open('data.csv', 'r') as f:
     data = list(csv.reader(f))
-    nodeAvgDividedByDict, allAvgDividedBy = {}, 1
+    nodeAvgDividedByDict, allAvgDividedBy = {}, 0
     minMaxAvg = {
         'all': {
             'min': float(data[1][1]),
@@ -16,7 +16,7 @@ with open('data.csv', 'r') as f:
 
     for i in range(len(data[0])):
         if(i ==0): continue
-        idx, nodeAvgDividedByDict[data[0][i]] = 1, 1
+        idx, nodeAvgDividedByDict[data[0][i]] = 1, 0
         if(data[1][i] == ''): 
             while(data[idx][i] == ''): idx += 1
         minMaxAvg[data[0][i]] = {
